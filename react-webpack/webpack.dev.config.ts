@@ -4,6 +4,7 @@ import { Configuration as WebpackConfiguration, HotModuleReplacementPlugin } fro
 import { Configuration as WebpackDevServerConfiguration } from 'webpack-dev-server';
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import NodePolyfillPlugin from 'node-polyfill-webpack-plugin'
+import ESLintPlugin from "eslint-webpack-plugin";
 
 interface Configuration extends WebpackConfiguration {
   devServer?: WebpackDevServerConfiguration;
@@ -45,6 +46,9 @@ const config: Configuration = {
       async: false
     }),
     new NodePolyfillPlugin(),
+    new ESLintPlugin({
+      extensions: ["js", "jsx", "ts", "tsx"],
+    }),
   ],
   devtool: "inline-source-map",
   devServer: {

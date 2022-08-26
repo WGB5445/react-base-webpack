@@ -4,6 +4,7 @@ import HtmlWebpackPlugin from "html-webpack-plugin";
 import ForkTsCheckerWebpackPlugin from "fork-ts-checker-webpack-plugin";
 import { CleanWebpackPlugin } from "clean-webpack-plugin";
 import NodePolyfillPlugin from 'node-polyfill-webpack-plugin'
+import ESLintPlugin from "eslint-webpack-plugin";
 
 const config: Configuration = {
   mode: "production",
@@ -43,6 +44,9 @@ const config: Configuration = {
     }),
     new CleanWebpackPlugin(),
     new NodePolyfillPlugin(),
+    new ESLintPlugin({
+      extensions: ["js", "jsx", "ts", "tsx"],
+    }),
   ],
 };
 
