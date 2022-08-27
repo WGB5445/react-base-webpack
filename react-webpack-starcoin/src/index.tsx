@@ -45,7 +45,7 @@ function App(){
   },[])
   return(
     <div>
-      <h1> My React and TypeScript App!</h1>
+      <h1> My React and TypeScript starcoin starmask App!</h1>
       <button onClick={async ()=>{
         if(starmask){
           setAccount(await window.starcoin.request({
